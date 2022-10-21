@@ -32,7 +32,7 @@ public class LitecoinTestNet3ParamsTest {
         Context context = new Context(params);
     }
 
-    // Confirm subsidy rules follow Dogecoin pattern
+    // Confirm subsidy rules follow Dogmcoin pattern
     @Test
     public void shouldHaveCorrectValues() {
         assertEquals(100, params.getMajorityWindow());
