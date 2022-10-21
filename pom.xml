@@ -18,9 +18,9 @@
     </parent>
 
     <scm>
-        <connection>scm:git:https://github.com/dogecoin/libdohj</connection>
-        <developerConnection>scm:git:https://github.com/dogecoin/libdohj</developerConnection>
-        <url>scm:git:https://github.com/dogecoin/libdohj</url>
+        <connection>scm:git:https://github.com/dogmcoin/libdohj</connection>
+        <developerConnection>scm:git:https://github.com/dogmcoin/libdohj</developerConnection>
+        <url>scm:git:https://github.com/dogmcoin/libdohj</url>
     </scm>
 
     <name>libdohj Parent</name>
@@ -38,7 +38,7 @@
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/dogecoin/libdohj/issues</url>
+        <url>https://github.com/dogmcoin/libdohj/issues</url>
     </issueManagement>
 
     <!-- Common build plugin configuration -->
