@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import org.libdohj.core.AltcoinSerializer;
-import org.libdohj.params.DogecoinMainNetParams;
-import org.libdohj.params.DogecoinTestNet3Params;
+import org.libdohj.params.DogmcoinMainNetParams;
+import org.libdohj.params.DogmcoinTestNet3Params;
 
 import static org.bitcoinj.core.Util.getBytes;
 import static org.junit.Assert.*;
@@ -19,7 +19,7 @@ import org.junit.rules.ExpectedException;
  * AuxPoW header parsing/serialization and validation
  */
 public class AuxPoWTest {
-    static final NetworkParameters params = DogecoinMainNetParams.get();
+    static final NetworkParameters params = DogmcoinMainNetParams.get();
     private static final int MERKLE_ROOT_COINBASE_INDEX = 0;
 
     @Before
@@ -28,7 +28,7 @@ public class AuxPoWTest {
     }
 
     /**
-     * Parse the AuxPoW header from Dogecoin block #403,931.
+     * Parse the AuxPoW header from Dogmcoin block #403,931.
      */
     @Test
     public void parseAuxPoWHeader() throws Exception {
@@ -48,7 +48,7 @@ public class AuxPoWTest {
     }
 
     /**
-     * Test serializing the AuxPoW header from Dogecoin block #403,931.
+     * Test serializing the AuxPoW header from Dogmcoin block #403,931.
      */
     @Test
     public void serializeAuxPoWHeader() throws Exception {
@@ -61,7 +61,7 @@ public class AuxPoWTest {
     }
 
     /**
-     * Validate the AuxPoW header from Dogecoin block #403,931.
+     * Validate the AuxPoW header from Dogmcoin block #403,931.
      */
     @Test
     public void checkAuxPoWHeader() throws Exception {
@@ -78,7 +78,7 @@ public class AuxPoWTest {
     @Test
     public void checkAuxPoWHeaderNoTxHeader() throws Exception {
         // Emulate Namecoin block hashing for this test
-        final NetworkParameters namecoinLikeParams = new DogecoinTestNet3Params() {
+        final NetworkParameters namecoinLikeParams = new DogmcoinTestNet3Params() {
             @Override
             public Sha256Hash getBlockDifficultyHash(Block block) {
                 // Namecoin uses SHA256 hashes
@@ -114,7 +114,7 @@ public class AuxPoWTest {
      */
     @Test
     public void shouldRejectOwnChainID() throws Exception {
-        byte[] payload = Util.getBytes(getClass().getResourceAsStream("dogecoin_block371337.bin"));
+        byte[] payload = Util.getBytes(getClass().getResourceAsStream("dogmcoin_block371337.bin"));
         AltcoinSerializer serializer = (AltcoinSerializer)params.getDefaultSerializer();
         final AltcoinBlock block = (AltcoinBlock)serializer.makeBlock(payload);
         assertEquals(98, block.getChainID());
