@@ -109,7 +109,7 @@ public class NamecoinMainNetParams extends AbstractNamecoinParams {
 
     @Override
     public String getPaymentProtocolId() {
-        // TODO: CHANGE THIS (comment from Dogecoin)
+        // TODO: CHANGE THIS (comment from Dogmcoin)
         return ID_NMC_MAINNET;
     }
 
